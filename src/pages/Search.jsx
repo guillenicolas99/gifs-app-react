@@ -4,7 +4,7 @@ import getGif from "../services/getGifs"
 import Gifs from "../components/Gifs"
 import LinksBtn from "../components/LinksBtn"
 
-const api_key ='EPmF7Yq9E04FgTbeXOHPmpU8d8wXyJla'
+const api_key = 'EPmF7Yq9E04FgTbeXOHPmpU8d8wXyJla'
 
 
 export default function SearchPage() {
@@ -14,8 +14,18 @@ export default function SearchPage() {
     const [gifs, setGifs] = useState([])
 
     useEffect(() => {
-        getGif( apiURL).then(gif => setGifs(gif))
+        getGif(apiURL).then(gif => {
+            setGifs(gif)
+            console.log(gif.length)
+        })
     }, [keyword])
+
+    if (gifs.length <= 1) return (
+        <main style={{textAlign:"center"}}>
+            <h2>No hay resultados de la búsqueda</h2>
+            <LinksBtn to='/'>Volver</LinksBtn>
+        </main>
+    )
 
     return (
         <main>
