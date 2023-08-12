@@ -60,6 +60,7 @@ header form {
   border-radius: 10px;
   padding: 10px 25px;
   transition: .3s ease;
+  display: inline-block;
 }
 
 .link-btn:hover {

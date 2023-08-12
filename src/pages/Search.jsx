@@ -21,9 +21,12 @@ export default function SearchPage() {
     }, [keyword])
 
     if (gifs.length <= 1) return (
-        <main style={{textAlign:"center"}}>
+        <main style={{ textAlign: "center" }}>
             <h2>No hay resultados de la búsqueda</h2>
-            <LinksBtn to='/'>Volver</LinksBtn>
+            <div>
+                <img src="https://media4.giphy.com/media/26xBIygOcC3bAWg3S/200w_d.gif?cid=dc0b2366vq3lxcccws6xgrqxb5nkr1b3xah1mtozd4o64d5i&ep=v1_gifs_search&rid=200w_d.gif&ct=g" alt="no lo encontramos" />
+            </div>
+            <LinksBtn to='/'>Ir a inicio</LinksBtn>
         </main>
     )
 
